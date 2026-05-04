@@ -16,6 +16,7 @@ const employeeSchema = new mongoose.Schema({
 });
 
 const Employee = mongoose.model("Employee", employeeSchema);
+const PORT = process.env.PORT || 5000;
 
 
 app.use(cors())
@@ -52,6 +53,6 @@ app.get("/api/data", async (req, res) => {
    res.json(data);
 });
 
-app.listen(5000, () => {
-   console.log("Server is running on the port 5000");
+app.listen(PORT, () => {
+   console.log("Server is running on the port" + PORT);
 });
